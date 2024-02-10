@@ -1,3 +1,14 @@
+.mascara {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(145, 119, 85, 0.7);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+
 .container {
   max-width: 1200px;
   margin: 0px auto;
@@ -57,6 +68,7 @@ body {
   font-family: "Merriweather", serif;
   font-size: 16px;
   line-height: 1.4;
+  letter-spacing: 1px;
   color: #0d0b08;
   overflow-x: hidden;
 }
@@ -67,4 +79,79 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 30px 40px 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .banner-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.header .header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.header .header-content .logo {
+  width: 450px;
+  height: auto;
+}
+.header .header-content .logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header .header-content .nav-header ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header .header-content .nav-header a {
+  color: #fff;
+  position: relative;
+}
+.header .header-content .nav-header a::before {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+.header .header-content .nav-header a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+.header .header-content .nav-header a:hover:before,
+.header .header-content .nav-header a:hover:after {
+  width: 80%;
 }/*# sourceMappingURL=style.css.map */

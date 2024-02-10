@@ -6,6 +6,16 @@ $cor_terciaria: #efebe6;
 $fonte_titulo: "Gloock", serif;
 $fonte_texto: "Merriweather", serif;
 
+.mascara {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(145 119 85 / 70%);
+  backdrop-filter: blur(4px);
+}
+
 // MEDIA QUERY
 // Variáveis do grid
 $colunas: 12;
