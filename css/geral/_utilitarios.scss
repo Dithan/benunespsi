@@ -1,0 +1,73 @@
+$cor_primaria: #b29e84;
+$cor_secundaria: #0d0b08;
+$cor_terciaria: #efebe6;
+
+// TIPAGEM (fonts)
+$fonte_titulo: "Gloock", serif;
+$fonte_texto: "Merriweather", serif;
+
+// MEDIA QUERY
+// Variáveis do grid
+$colunas: 12;
+$margens: 20px;
+$largura_desktop: 1200px;
+$largura_tablet: 760px;
+$largura_smartphone: 480px;
+
+// Mixin de media-queries
+@mixin mq($largura) {
+  @if $largura == l {
+    @media screen and (min-width: #{$largura_desktop}) {
+      @content;
+    }
+  } @else if $largura == m {
+    @media screen and (min-width: #{$largura_tablet}) and (max-width: #{$largura_desktop - 1}) {
+      @content;
+    }
+  } @else if $largura == s {
+    @media screen and (max-width: #{$largura_tablet - 1}) {
+      @content;
+    }
+  }
+}
+
+// Limita largura dos objetos
+// Mixin do container
+@mixin container {
+  max-width: $largura_desktop;
+  margin: 0px auto;
+  position: relative;
+
+  @include mq(m) {
+    max-width: $largura_tablet;
+  }
+
+  @include mq(s) {
+    max-width: $largura_smartphone;
+    padding-left: calc($margens / 2);
+    padding-right: calc($margens / 2);
+  }
+}
+
+.container {
+  @include container;
+}
+
+// Oculta o elemento no DESKTOP
+.hide-desktop {
+  @include mq(l) {
+    display: none !important;
+  }
+}
+// Oculta o elemento no TABLET
+.hide-tablet {
+  @include mq(m) {
+    display: none !important;
+  }
+}
+// Oculta o elemento no MOBILE
+.hide-mobile {
+  @include mq(s) {
+    display: none !important;
+  }
+}
