@@ -1,10 +1,16 @@
+// CORES
 $cor_primaria: #b29e84;
 $cor_secundaria: #0d0b08;
 $cor_terciaria: #efebe6;
 
+// UTILITIES
+$radius: 20px;
+$shadow: rgba(32, 32, 32, 0.062745098) 0px 8px 20px;
+
 // TIPAGEM (fonts)
-$fonte_titulo: "Gloock", serif;
-$fonte_texto: "Merriweather", serif;
+$fonte_titulo: "Gloock", serif; /* 400 */
+$fonte_texto: "Merriweather", serif; /* 300, 400, 700 */
+$cor_fonte_escura: #3c3123;
 
 .mascara {
   width: 100%;
@@ -59,10 +65,6 @@ $largura_smartphone: 480px;
   }
 }
 
-.container {
-  @include container;
-}
-
 // Oculta o elemento no DESKTOP
 .hide-desktop {
   @include mq(l) {
@@ -80,4 +82,13 @@ $largura_smartphone: 480px;
   @include mq(s) {
     display: none !important;
   }
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
